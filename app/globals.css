@@ -1,0 +1,234 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  /* Official Google Brand Colors */
+  --google-red: #ea4335;
+  --google-blue: #4285f4;
+  --google-yellow: #fbbc04;
+  --google-green: #34a853;
+  --google-grey: #f1f3f4;
+  --google-dark: #202124;
+
+  /* Professional Design Tokens */
+  --background: #ffffff;
+  --foreground: #202124;
+  --card: #ffffff;
+  --card-foreground: #202124;
+  --popover: #ffffff;
+  --popover-foreground: #202124;
+  --primary: #ea4335;
+  --primary-foreground: #ffffff;
+  --secondary: #4285f4;
+  --secondary-foreground: #ffffff;
+  --muted: #f1f3f4;
+  --muted-foreground: #5f6368;
+  --accent: #34a853;
+  --accent-foreground: #ffffff;
+  --destructive: #ea4335;
+  --destructive-foreground: #ffffff;
+  --border: #e0e0e0;
+  --input: #ffffff;
+  --ring: #4285f4;
+  --chart-1: #4285f4;
+  --chart-2: #ea4335;
+  --chart-3: #fbbc04;
+  --chart-4: #34a853;
+  --chart-5: #f1f3f4;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #202124;
+  --sidebar-primary: #4285f4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ea4335;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #e0e0e0;
+  --sidebar-ring: #4285f4;
+}
+
+.dark {
+  --background: #202124;
+  --foreground: #e8eaed;
+  --card: #303134;
+  --card-foreground: #e8eaed;
+  --popover: #303134;
+  --popover-foreground: #e8eaed;
+  --primary: #ea4335;
+  --primary-foreground: #ffffff;
+  --secondary: #4285f4;
+  --secondary-foreground: #ffffff;
+  --muted: #3c4043;
+  --muted-foreground: #9aa0a6;
+  --accent: #34a853;
+  --accent-foreground: #ffffff;
+  --destructive: #ea4335;
+  --destructive-foreground: #ffffff;
+  --border: #5f6368;
+  --input: #303134;
+  --ring: #4285f4;
+  --sidebar: #202124;
+  --sidebar-foreground: #e8eaed;
+  --sidebar-primary: #4285f4;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ea4335;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #5f6368;
+  --sidebar-ring: #4285f4;
+}
+
+@theme inline {
+  /* Google Brand Colors */
+  --color-google-red: var(--google-red);
+  --color-google-blue: var(--google-blue);
+  --color-google-yellow: var(--google-yellow);
+  --color-google-green: var(--google-green);
+  --color-google-grey: var(--google-grey);
+  --color-google-dark: var(--google-dark);
+
+  /* Semantic Design Tokens */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 2px);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Professional Typography */
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-bold text-foreground;
+  }
+
+  h1 {
+    @apply text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl lg:text-5xl;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  /* Professional Button Styles */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary/90 text-primary-foreground font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary/90 text-secondary-foreground font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105;
+  }
+
+  .btn-accent {
+    @apply bg-accent hover:bg-accent/90 text-accent-foreground font-semibold px-6 py-3 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 transform hover:scale-105;
+  }
+
+  /* Professional Card Styles */
+  .card-professional {
+    @apply bg-card border border-border rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200;
+  }
+
+  /* Formal Social Media Icons */
+  .social-icon {
+    @apply inline-flex items-center justify-center w-10 h-10 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground text-muted-foreground transition-all duration-200 font-semibold;
+  }
+
+  .social-icon-linkedin::after {
+    content: "in";
+    font-family: serif;
+    font-weight: bold;
+  }
+
+  .social-icon-twitter::after {
+    content: "𝕏";
+    font-weight: bold;
+  }
+
+  .social-icon-github::after {
+    content: "⚡";
+  }
+
+  .social-icon-email::after {
+    content: "@";
+    font-weight: bold;
+  }
+
+  /* Professional Navigation */
+  .nav-professional {
+    @apply bg-background/95 backdrop-blur-sm border-b border-border shadow-sm;
+  }
+
+  /* Professional Hero Section */
+  .hero-professional {
+    @apply bg-gradient-to-br from-google-blue/10 via-background to-google-red/10;
+  }
+
+  /* Professional Stats Section */
+  .stats-professional {
+    @apply bg-muted/50;
+  }
+
+  /* Professional Timeline */
+  .timeline-professional {
+    @apply relative;
+  }
+
+  .timeline-professional::before {
+    content: "";
+    @apply absolute left-4 top-0 bottom-0 w-0.5 bg-border;
+  }
+
+  .timeline-item {
+    @apply relative pl-12 pb-8;
+  }
+
+  .timeline-item::before {
+    content: "";
+    @apply absolute left-2.5 top-2 w-3 h-3 bg-primary rounded-full border-2 border-background;
+  }
+}
